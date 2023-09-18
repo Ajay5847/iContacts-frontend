@@ -3,6 +3,6 @@ import contactReducer from "./slices/contactSlice";
 
 export default configureStore({
     reducer: {
-        contactReducer
+        contactReducer,
     }
 })

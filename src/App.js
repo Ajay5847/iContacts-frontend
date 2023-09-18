@@ -14,7 +14,7 @@ export const TOAST_FAILURE = "toast_failure";
 function App() {
   const toastData = useSelector((state) => state.contactReducer.toastData);
   const [sortedContacts, setSortedContacts] = useState([]);
-
+  const [filteredContacts, setFilteredContacts] = useState([]);
 
   useEffect(() => {
     switch (toastData?.type) {
@@ -29,12 +29,12 @@ function App() {
 
   return (
     <div>
-      <Navbar setSortedContacts={setSortedContacts} />
+      <Navbar setSortedContacts={setSortedContacts} setFilteredContacts={setFilteredContacts} />
       <div>
         <Toaster />
       </div>
       <Routes>
-        <Route path='/' element={<Home sortedContacts={sortedContacts} />} />
+        <Route path='/' element={<Home sortedContacts={sortedContacts} filteredContacts={filteredContacts} />} />
         <Route path='/updatecontact/:id' element={<UpdateContact />} />
         <Route path='/createcontact' element={<CreateContact />} />
       </Routes>

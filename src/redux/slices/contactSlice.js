@@ -31,7 +31,7 @@ const contactSlice = createSlice({
     reducers: {
         showToast: (state, action) => {
             state.toastData = action.payload;
-        },
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(getContactData.fulfilled, (state, action) => {

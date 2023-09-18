@@ -3,22 +3,22 @@ import './ContactCard.scss'
 import profileImg from '../../assets/user.png'
 import { MdModeEdit, MdDelete } from 'react-icons/md'
 import { useNavigate } from 'react-router'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { axiosClient } from '../../axios/axisoClient'
 import toast from 'react-hot-toast'
 import { getContactData } from '../../redux/slices/contactSlice'
 
 function ContactCard({ contact }) {
     const navigate = useNavigate();
-    const data = useSelector(state => state.contactReducer.contactData);
     const dispatch = useDispatch();
+
     async function handleDelete() {
         try {
             await axiosClient.delete(`/api/contacts/${contact._id}`);
             dispatch(getContactData());
             toast.success("contact deleted");
         } catch (error) {
-            toast.error("Internal Error")
+            toast.error("Internal Server Error")
         }
     }
     return (
