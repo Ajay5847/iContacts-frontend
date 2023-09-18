@@ -1,0 +1,52 @@
+.UpdateContact {
+    border: 1px solid rgb(201, 194, 194);
+    border-radius: 17px;
+    padding: 10px;
+    width: 300px;
+    margin: 40px auto;
+    background-color: white;
+  
+      label,
+      input {
+        display: block;
+        padding: 10px;
+      }
+  
+      label {
+        font-weight: bold;
+      }
+  
+      input {
+        width: 100%;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+  
+      .submitbutton {
+        display: flex;
+        justify-content: center;
+      }
+      .submit {
+        margin-top: 20px;
+        font-weight: bold;
+        background-color: aqua;
+        color: rgb(0, 0, 0);
+      }
+  
+      .submit:hover {
+        background-color: #ddd;
+      }
+  
+      .deletebutton {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+  
+        .delete {
+          background-color: red;
+          font-weight: bold;
+          color: white;
+        }
+      }
+  }
+  
